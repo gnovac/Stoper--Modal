@@ -1,0 +1,241 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --first-color: rgb(240, 12, 0);
+    --second-color: rgb(210, 199, 190);
+    --hover-color: rgb(192, 10, 0);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #333;
+}
+
+.wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px;
+    width: 800px;
+    background-image: radial-gradient(circle, rgb(43, 44, 46) 0%, rgb(25, 25, 25) 93%);
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px black;
+    color: #fff;
+    overflow: hidden;
+}
+
+.info i {
+    position: absolute;
+    top: 6px;
+    padding: 20px;
+    font-size: 24px;
+    color: var(--second-color);
+    cursor: pointer;
+    transition: color .3s;
+}
+
+.info .fa-paint-brush {
+    right: 14px;
+}
+
+.info .fa-question {
+    right: 60px;
+}
+
+.info i:hover {
+    color: var(--first-color);
+}
+
+.colors {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    width: 60px;
+    height: 260px;
+    top: 70px;
+    right: -100px;
+    transition: right .3s;
+}
+
+.color {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color .5s, box-shadow .5s;
+}
+
+.show-colors {
+    right: 18px;
+}
+
+.first {
+    background-color: rgb(240, 12, 0);
+    box-shadow: 0 0 8px rgb(250, 12, 0);
+}
+
+.second {
+    background-color: rgb(40, 240, 0);
+    box-shadow: 0 0 8px rgb(40, 240, 0);
+}
+
+.third {
+    background-color: rgb(0, 112, 240);
+    box-shadow: 0 0 8px rgb(0, 112, 240);
+}
+
+.fourth {
+    background-color: rgb(224, 240, 0);
+    box-shadow: 0 0 8px rgb(224, 240, 0);
+}
+
+.first:hover {
+    background-color: rgb(228, 12, 1);
+    box-shadow: 0 0 16px rgb(228, 12, 1);
+}
+
+.second:hover {
+    background-color: rgb(37, 214, 2);
+    box-shadow: 0 0 16px rgb(37, 214, 2);
+}
+
+.third:hover {
+    background-color: rgb(2, 88, 187);
+    box-shadow: 0 0 16px rgb(2, 88, 187);
+}
+
+.fourth:hover {
+    background-color: rgb(214, 230, 2);
+    box-shadow: 0 0 16px rgb(214, 230, 2);
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 60px;
+    font-weight: lighter;
+}
+
+.stoperwatch {
+    font-size: 72px;
+    color: var(--first-color);
+}
+
+.time {
+    visibility: hidden;
+    color: var(--second-color);
+    font-size: 22px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 30px;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    width: 20%;
+    color: #fff;
+    font-size: 22px;
+    background-color: transparent;
+    border: 1px solid var(--first-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+.archive {
+    flex-grow: 1;
+    text-transform: uppercase;
+}
+
+button:hover,
+button:focus {
+    background-color: var(--first-color);
+    outline: none;
+}
+
+.time-list li {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    font-size: 22px;
+    color: var(--second-color);
+}
+
+.time-list span {
+    font-weight: bold;
+}
+
+.modal-shadow {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .65);
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 360px;
+    padding: 30px 60px;
+    border-radius: 15px;
+    background-color: rgb(245, 245, 245);
+}
+
+.modal h3 {
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.modal p {
+    margin-bottom: 10px;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.modal .close {
+    display: block;
+    margin: 40px auto 0;
+    width: 200px;
+    background-color: var(--first-color);
+    transition: background-color .3s;
+}
+
+.modal .close:hover {
+    background-color: var(--hover-color);
+}
+
+.modal-animation {
+    animation: show-modal .5s;
+}
+
+@keyframes show-modal {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
